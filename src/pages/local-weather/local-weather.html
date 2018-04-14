@@ -3,7 +3,7 @@
         <button ion-button menuToggle>
             <ion-icon name="menu"></ion-icon>
         </button>
-        <ion-title>Local Weather</ion-title>
+        <ion-title>Clima Local</ion-title>
     </ion-navbar>
 </ion-header>
 
@@ -12,7 +12,7 @@
     <ion-card-content no-padding>
 
       <ion-item>
-        <ion-label class="text-1x bold">Select Local</ion-label>
+        <ion-label class="text-1x bold">Selecciona tu local</ion-label>
         <ion-select [(ngModel)]="location" (ionChange)="getWeather(location)">
           <ion-option *ngFor="let location of locationList" [value]="location">{{ location.city }}</ion-option>
         </ion-select>
@@ -38,16 +38,16 @@
                 <strong>Temp:</strong> {{weather.temperature_string}}
                 </ion-item>
                  <ion-item>
-                    <strong>Relative Humidity:</strong> {{weather.relative_humidity}}
+                    <strong>Humedad Relativa:</strong> {{weather.relative_humidity}}
                 </ion-item>
                  <ion-item>
-                    <strong>Dewpoint:</strong> {{weather.dewpoint_string}}
+                    <strong>Punto Rocío:</strong> {{weather.dewpoint_string}}
                 </ion-item>
                  <ion-item>
-                    <strong>Visibility:</strong> {{weather.visibility_km}}
+                    <strong>Visibilidad:</strong> {{weather.visibility_km}}
                 </ion-item>
                 <ion-item>
-                    <strong>Heat Index:</strong> {{weather.heat_index_string}}
+                    <strong>Indice Calor:</strong> {{weather.heat_index_string}}
                 </ion-item>
 
             </ion-list>

@@ -4,7 +4,7 @@
   <ion-navbar class="no-border">
     <ion-title>
       <ion-icon name="cog" class="text-primary"></ion-icon>
-      <span class="text-primary">Settings</span>
+      <span class="text-primary">Configuraciones</span>
     </ion-title>
   </ion-navbar>
 
@@ -13,9 +13,9 @@
 <ion-content class="common-bg">
   <!-- User settings-->
   <ion-item-group>
-    <ion-item-divider color="secondary" class="bold">User Settings</ion-item-divider>
+    <ion-item-divider color="secondary" class="bold">Configuración de usuario</ion-item-divider>
     <ion-item>
-      <ion-label>Language</ion-label>
+      <ion-label>Lenguage</ion-label>
       <ion-select [(ngModel)]="language" cancelText="Cancel" okText="OK">
         <ion-option value="en-US" selected="true">English (US)</ion-option>
         <ion-option value="en-GB">English (UK)</ion-option>
@@ -34,7 +34,7 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Currency</ion-label>
+      <ion-label>Moneda</ion-label>
       <ion-select [(ngModel)]="currency" cancelText="Cancel" okText="OK">
         <ion-option value="USD" selected="true">U.S Dollar (US$)</ion-option>
         <ion-option value="EUR">Euro (€)</ion-option>
@@ -44,33 +44,33 @@
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Units</ion-label>
+      <ion-label>Unidades</ion-label>
       <ion-select [(ngModel)]="munits" cancelText="Cancel" okText="OK">
-        <ion-option value="M" selected="true">Miles (ft²)</ion-option>
-        <ion-option value="K">Kilometers (m²)</ion-option>
+        <ion-option value="M" selected="true">Millas (ft²)</ion-option>
+        <ion-option value="K">Kilometros (m²)</ion-option>
       </ion-select>
     </ion-item>
     <ion-item>
-      <ion-label>Notifications?</ion-label>
+      <ion-label>Notificaciones?</ion-label>
       <ion-toggle checked="true"></ion-toggle>
     </ion-item>
   </ion-item-group>
   <!-- App settings-->
   <ion-item-group>
-    <ion-item-divider color="secondary" class="bold">App Settings</ion-item-divider>
+    <ion-item-divider color="secondary" class="bold">App Order</ion-item-divider>
     <ion-item>
-      <span>Clear Private Data</span>
+      <span>Limpiar data privada</span>
     </ion-item>
     <ion-item>
-      <ion-label>Push Notifications?</ion-label>
+      <ion-label>Push Notificaciones?</ion-label>
       <ion-toggle checked="false"></ion-toggle>
     </ion-item>
     <ion-item>
-      <span>Privacy Policy</span>
+      <span>Terminos y Condiciones</span>
     </ion-item>
   </ion-item-group>  
 
   <!--sign out button-->
-  <button ion-button color="primary" full tappable (click)="logout()">LOG OUT</button>
+  <button ion-button color="primary" full tappable (click)="logout()">Cerrar Sesión</button>
 
 </ion-content>

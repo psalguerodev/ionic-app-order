@@ -16,7 +16,7 @@ export class SearchLocationPage {
     nearby: [
       {
         id: 1,
-        name: "Current Location"
+        name: "Posición actual"
       },
       {
         id: 2,

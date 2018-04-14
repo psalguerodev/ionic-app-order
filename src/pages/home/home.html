@@ -5,7 +5,7 @@
       <ion-icon name="menu"></ion-icon>
     </button>
     <ion-title>
-      <strong>Ionic 3</strong> Start Theme
+      <strong>App</strong> Order
     </ion-title>
     <ion-buttons end>
       <button ion-button tappable (click)="presentNotifications($event)">
@@ -21,10 +21,12 @@
 <ion-content padding class="animated fadeIn common-bg">
 
   <ion-card no-margin margin-bottom class="full-width">
+    
     <ion-item tappable (click)="choosePlace('from')" class="border-bottom">
       <ion-icon name="search" color="primary" item-left></ion-icon>
       <span>{{ search.name }}</span>
     </ion-item>
+    
     <ion-item>
       <ion-icon name="md-calendar" color="primary" item-left></ion-icon>
       <ion-datetime class="no-pl" displayFormat="DD/MM/YYYY" pickerFormat="DD/MM/YYYY" [(ngModel)]="search.date"></ion-datetime>
@@ -32,7 +34,7 @@
   </ion-card>
 
   <button ion-button icon-start block no-margin color="primary" class="round" tappable (click)="doSearch()">
-    <ion-icon name="search"></ion-icon> Search
+    <ion-icon name="search"></ion-icon> Buscar
   </button>
 
 </ion-content>
