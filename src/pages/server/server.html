@@ -1,0 +1,53 @@
+<ion-header>
+  <ion-navbar color="primary">
+      <button ion-button menuToggle>
+          <ion-icon name="menu"></ion-icon>
+      </button>
+      <ion-title>Servidor Socket</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="common-bg">
+
+  <ion-grid class="card" padding>
+    <ion-row>
+        <ion-col width-50 offset-25>
+            <h2 class="location text-dark">
+              <ion-icon name="stats"></ion-icon>
+              Hostname: <span *ngIf="dataServer.hostname">{{ dataServer.hostname }}</span></h2>
+            <!-- <div class="icon"><img src="{{weather.icon_url}}" alt="weather"></div>s -->
+        </ion-col>
+    </ion-row>
+    <ion-row>
+        <ion-col width-100>
+            <ion-list>
+                <ion-item>
+                <strong>Memoria Total:</strong>
+                <span *ngIf="dataServer.totalmem">{{ dataServer.totalmem }}</span> MB
+                </ion-item>
+                 <ion-item>
+                    <strong>Memoria Usada:</strong>
+                    <span *ngIf="dataServer.usedmen">{{ dataServer.usedmen }}</span> MB
+                </ion-item>
+                <ion-item>
+                  <strong>Memoria Disponible:</strong>
+                  <span *ngIf="dataServer.freemem">{{ dataServer.freemem }}</span> MB
+                </ion-item>
+                <ion-item>
+                  <strong>Arquitectura:</strong>
+                  <span *ngIf="dataServer.arch">{{ dataServer.arch }}</span>
+                </ion-item>
+                <ion-item>
+                  <strong>Platforma:</strong>
+                  <span *ngIf="dataServer.platform">{{ dataServer.platform }}</span>
+                </ion-item>
+                <ion-item>
+                    <strong>User Root:</strong>
+                    <span *ngIf="dataServer.userInfo">{{ dataServer.userInfo.username }}</span>
+                </ion-item>
+            </ion-list>
+        </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

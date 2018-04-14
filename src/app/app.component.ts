@@ -1,3 +1,4 @@
+import { ServerPage } from './../pages/server/server';
 import { Component, ViewChild } from "@angular/core";
 import { Platform, Nav } from "ionic-angular";
 
@@ -36,6 +37,7 @@ export class MyApp {
 
     this.appMenuItems = [
       {title: 'Inicio', component: HomePage, icon: 'home'},
+      {title: 'Servidor', component: ServerPage, icon: 'logo-nodejs'},
       {title: 'Clima', component: LocalWeatherPage, icon: 'partly-sunny'},
       {title: 'Pedidos', component: LocalWeatherPage, icon: 'list-box'},
       {title: 'Graficos', component: LocalWeatherPage, icon: 'stats'},

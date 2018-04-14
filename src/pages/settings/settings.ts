@@ -9,6 +9,11 @@ import {LoginPage} from "../login/login";
 })
 export class SettingsPage {
 
+  public language : string ;
+  public currency : string ;
+  public munits : string;
+
+
   constructor(public nav: NavController) {
   }
 
