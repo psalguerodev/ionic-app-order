@@ -1,29 +1,14 @@
 // Ionic Variables and Theming. For more info, please see:
 // http://ionicframework.com/docs/theming/
-
-// Font path is used to include ionicons,
-// roboto, and noto sans fonts
-$font-path: "../assets/fonts";
-
-
-// The app direction is used to include
-// rtl styles in your app. For more info, please see:
-// http://ionicframework.com/docs/theming/rtl-support/
-$app-direction: ltr;
-
-
 @import "ionic.globals";
-
 
 // Shared Variables
 // --------------------------------------------------
 // To customize the look and feel of this app, you can override
 // the Sass variables found in Ionic's source scss files.
-// To view all the possible Ionic variables, see:
-// http://ionicframework.com/docs/theming/overriding-ionic-variables/
 
-
-
+$text-color: #4c6df9;
+$background-color: #fafafa;
 
 // Named Color Variables
 // --------------------------------------------------
@@ -34,34 +19,12 @@ $app-direction: ltr;
 // The "primary" color is the only required color in the map.
 
 $colors: (
-  primary:    #488aff,
-  secondary:  #32db64,
-  danger:     #f53d3d,
-  light:      #f4f4f4,
-  dark:       #222
+  primary: #1976d2,
+  secondary: #1976d2,
+  danger: #dd0031,
+  light: #75C4FD,
+  dark: #0039a2
 );
-
-
-// App iOS Variables
-// --------------------------------------------------
-// iOS only Sass variables can go here
-
-
-
-
-// App Material Design Variables
-// --------------------------------------------------
-// Material Design only Sass variables can go here
-
-
-
-
-// App Windows Variables
-// --------------------------------------------------
-// Windows only Sass variables can go here
-
-
-
 
 // App Theme
 // --------------------------------------------------
@@ -72,17 +35,10 @@ $colors: (
 
 @import "ionic.theme.default";
 
-
 // Ionicons
 // --------------------------------------------------
 // The premium icon font for Ionic. For more info, please see:
-// http://ionicframework.com/docs/ionicons/
+// http://ionicframework.com/docs/v2/ionicons/
 
+$ionicons-font-path: "../assets/fonts";
 @import "ionic.ionicons";
-
-
-// Fonts
-// --------------------------------------------------
-
-@import "roboto";
-@import "noto-sans";
