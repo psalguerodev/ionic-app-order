@@ -1,0 +1,54 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Productos</ion-title>
+
+    <ion-buttons end>
+      <button ion-button tappable (click)="showSearch()">
+        <ion-icon name="search"></ion-icon>
+      </button>
+    </ion-buttons>
+  </ion-navbar>
+</ion-header>
+
+<ion-content>
+
+  <ion-searchbar *ngIf="viewsearch" [(ngModel)]="findText" [showCancelButton]="true" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)" placeholder="Buscar Producto"> 
+  </ion-searchbar>
+
+  <ion-list>
+    <ion-item-sliding *ngFor="let product of products.products">
+      <ion-item>
+        <ion-thumbnail item-start>
+          <img src="https://goo.gl/7M3jv6">
+        </ion-thumbnail>
+
+        <!-- Descripcion -->
+        <h2>{{ product.name }}</h2>
+        <p>Precio :  <ion-badge item-end color="secondary">{{ product.price | currency:'S/ '}}</ion-badge></p>
+        <p>Medida: <strong>{{ product.unity }}</strong></p>
+      </ion-item>
+      <ion-item-options side="left">
+        <button ion-button color="primary">
+          <h1>
+            <ion-icon name="text"></ion-icon>
+          </h1>
+        </button>
+      </ion-item-options>
+      <ion-item-options side="right">
+        <button ion-button color="danger">
+          <h1>
+            <ion-icon name="trash"></ion-icon>
+          </h1>
+        </button>
+      </ion-item-options>
+    </ion-item-sliding>
+  </ion-list>
+
+  <ion-fab right bottom>
+      <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+  </ion-fab>
+
+</ion-content>

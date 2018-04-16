@@ -25,8 +25,8 @@ export class LoginPage {
 
   forgotPass() {
     let forgot = this.forgotCtrl.create({
-      title: 'Forgot Password?',
-      message: "Enter you email address to send a reset link password.",
+      title: '¿Olvidaste tu clave?',
+      message: "Ingresa tu correo para resetearlo.",
       inputs: [
         {
           name: 'email',
@@ -36,17 +36,17 @@ export class LoginPage {
       ],
       buttons: [
         {
-          text: 'Cancel',
+          text: 'Cancelar',
           handler: data => {
             console.log('Cancel clicked');
           }
         },
         {
-          text: 'Send',
+          text: 'Enviar',
           handler: data => {
             console.log('Send clicked');
             let toast = this.toastCtrl.create({
-              message: 'Email was sended successfully',
+              message: 'Correo enviado correctamente',
               duration: 3000,
               position: 'top',
               cssClass: 'dark-trans',

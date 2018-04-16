@@ -1,0 +1,10 @@
+page-product {
+    .item-md ion-thumbnail ion-img, .item-md ion-thumbnail img{
+        width: 60px;
+        height: 60px;
+    }
+    .item-md ion-avatar[item-left], .item-md ion-thumbnail[item-left], .item-md ion-avatar[item-start], .item-md ion-thumbnail[item-start] {
+        margin: 0px;
+    }
+
+}

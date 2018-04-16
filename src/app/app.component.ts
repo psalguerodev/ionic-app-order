@@ -1,6 +1,7 @@
+import { ProductPage } from './../pages/product/product';
 import { ServerPage } from './../pages/server/server';
 import { Component, ViewChild } from "@angular/core";
-import { Platform, Nav } from "ionic-angular";
+import { Platform, Nav, ToastController } from "ionic-angular";
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -9,6 +10,7 @@ import { Keyboard } from '@ionic-native/keyboard';
 import { HomePage } from "../pages/home/home";
 import { LoginPage } from "../pages/login/login";
 import { LocalWeatherPage } from "../pages/local-weather/local-weather";
+import * as io from 'socket.io-client';
 
 export interface MenuItem {
     title: string;
@@ -23,15 +25,16 @@ export interface MenuItem {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = LoginPage;
-
+  rootPage: any = ProductPage;
   appMenuItems: Array<MenuItem>;
+  public socket : SocketIOClient.Socket;
 
   constructor(
     public platform: Platform,
     public statusBar: StatusBar,
     public splashScreen: SplashScreen,
-    public keyboard: Keyboard
+    public keyboard: Keyboard,
+    public toastCtrl : ToastController
   ) {
     this.initializeApp();
 
@@ -41,9 +44,11 @@ export class MyApp {
       {title: 'Clima', component: LocalWeatherPage, icon: 'partly-sunny'},
       {title: 'Pedidos', component: LocalWeatherPage, icon: 'list-box'},
       {title: 'Graficos', component: LocalWeatherPage, icon: 'stats'},
-      {title: 'Productos', component: LocalWeatherPage, icon: 'cart'},
+      {title: 'Productos', component: ProductPage, icon: 'cart'},
       {title: 'Clientes', component: LocalWeatherPage, icon: 'contacts'}
     ];
+
+    this.socket = io.connect("http://159.65.101.200:8002/socket-app");
   }
 
   initializeApp() {
@@ -60,6 +65,20 @@ export class MyApp {
 
       //*** Control Keyboard
       this.keyboard.disableScroll(true);
+
+      //	Connection Socket
+      this.socket.on('test-save', (data:any) => {
+        let toast = this.toastCtrl.create({
+          message: 'Connect: ' + data.message,
+          duration: 3000,
+          position: 'bottom',
+          cssClass: 'dark-trans',
+          closeButtonText: 'OK',
+          showCloseButton: true
+        });
+        toast.present();
+      })
+
     });
   }
 

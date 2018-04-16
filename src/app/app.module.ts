@@ -10,6 +10,7 @@ import {Keyboard} from '@ionic-native/keyboard';
 
 import {ActivityService} from "../services/activity-service";
 import {TripService} from "../services/trip-service";
+import { ProductService } from '../services/product.service';
 import {WeatherProvider} from "../services/weather";
 
 import {MyApp} from "./app.component";
@@ -25,6 +26,7 @@ import {TripDetailPage} from "../pages/trip-detail/trip-detail";
 import {TripsPage} from "../pages/trips/trips";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 import { ServerPage } from './../pages/server/server';
+import { ProductPage } from "../pages/product/product";
 
 
 
@@ -48,7 +50,8 @@ import { ServerPage } from './../pages/server/server';
     SearchLocationPage,
     TripDetailPage,
     TripsPage,
-    ServerPage
+    ServerPage,
+    ProductPage
   ],
   imports: [
     BrowserModule,
@@ -76,7 +79,8 @@ import { ServerPage } from './../pages/server/server';
     SearchLocationPage,
     TripDetailPage,
     TripsPage,
-    ServerPage
+    ServerPage,
+    ProductPage
   ],
   providers: [
     StatusBar,
@@ -84,7 +88,8 @@ import { ServerPage } from './../pages/server/server';
     Keyboard,
     ActivityService,
     TripService,
-    WeatherProvider
+    WeatherProvider,
+    ProductService
   ]
 })
 
