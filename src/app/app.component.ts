@@ -25,7 +25,7 @@ export interface MenuItem {
 export class MyApp {
   @ViewChild(Nav) nav: Nav;
 
-  rootPage: any = ProductPage;
+  rootPage: any = LoginPage;
   appMenuItems: Array<MenuItem>;
   public socket : SocketIOClient.Socket;
 

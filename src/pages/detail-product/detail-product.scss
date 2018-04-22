@@ -1,0 +1,25 @@
+page-detail-product {
+    .rounded {
+        width: 100%;
+        -moz-border-radius: 50px;
+        -webkit-border-radius: 50px;
+        border-radius: 10px;
+        margin-bottom: 10px;  
+        border: 1px solid #ccc;
+        padding: 0%;
+    }
+
+    .rounded:select {
+        border-bottom: none;
+    }
+
+    .container {
+        width: 300px; 
+        margin-left:auto; 
+        margin-right: auto; 
+    }
+
+    .btn-rounded{
+        border-right: 10px;
+    }
+}

@@ -1,3 +1,4 @@
+import { DetailProductPage } from './../pages/detail-product/detail-product';
 import {NgModule} from "@angular/core";
 import {IonicApp, IonicModule} from "ionic-angular";
 import {BrowserModule} from '@angular/platform-browser';
@@ -27,6 +28,8 @@ import {TripsPage} from "../pages/trips/trips";
 import {LocalWeatherPage} from "../pages/local-weather/local-weather";
 import { ServerPage } from './../pages/server/server';
 import { ProductPage } from "../pages/product/product";
+import { EnvironmentProvider } from '../providers/environment/environment';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -51,11 +54,13 @@ import { ProductPage } from "../pages/product/product";
     TripDetailPage,
     TripsPage,
     ServerPage,
-    ProductPage
+    ProductPage,
+    DetailProductPage
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
+    FormsModule,
     IonicModule.forRoot(MyApp, {
       scrollPadding: false,
       scrollAssist: true,
@@ -80,7 +85,8 @@ import { ProductPage } from "../pages/product/product";
     TripDetailPage,
     TripsPage,
     ServerPage,
-    ProductPage
+    ProductPage,
+    DetailProductPage
   ],
   providers: [
     StatusBar,
@@ -89,7 +95,8 @@ import { ProductPage } from "../pages/product/product";
     ActivityService,
     TripService,
     WeatherProvider,
-    ProductService
+    ProductService,
+    EnvironmentProvider
   ]
 })
 

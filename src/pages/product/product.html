@@ -18,11 +18,11 @@
   <ion-searchbar *ngIf="viewsearch" [(ngModel)]="findText" [showCancelButton]="true" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)" placeholder="Buscar Producto"> 
   </ion-searchbar>
 
-  <ion-list>
-    <ion-item-sliding *ngFor="let product of products.products">
+  <ion-list *ngIf="products.products">
+    <ion-item-sliding *ngFor="let product of products.products" (click)="updateProduct(product)">
       <ion-item>
         <ion-thumbnail item-start>
-          <img src="https://goo.gl/7M3jv6">
+          <img src="https://goo.gl/ihokqL">
         </ion-thumbnail>
 
         <!-- Descripcion -->
@@ -48,7 +48,9 @@
   </ion-list>
 
   <ion-fab right bottom>
-      <button ion-fab color="primary"><ion-icon name="add"></ion-icon></button>
+      <button (click)="createProduct()" ion-fab color="primary">
+        <ion-icon name="add"></ion-icon>
+      </button>
   </ion-fab>
 
 </ion-content>

@@ -1,0 +1,43 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title >{{title}}</ion-title>
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <div class="container">
+    <ion-list>
+      <form  name="frmProduct" #frmProduct="ngForm" (ngSubmit)="productHandler()">
+          <ion-item class="rounded">
+              <ion-input type="text" name="name" placeholder="Producto" [(ngModel)]="product.name"></ion-input>
+            </ion-item>
+      
+            <ion-item class="rounded">
+              <ion-input type="text" name="price"  placeholder="Precio" [(ngModel)]="product.price"></ion-input>
+            </ion-item>  
+      
+            <ion-item class="rounded">
+              <ion-input type="text" name="price_u" placeholder="Precio unitario" [(ngModel)]="product.price_u"></ion-input>
+            </ion-item>  
+            
+            <ion-item class="rounded">
+              <ion-input type="text" name="description" placeholder="Descripción" [(ngModel)]="product.description"></ion-input>
+            </ion-item>  
+      
+            <ion-item>
+              <img src="https://goo.gl/ihokqL" alt="" width="100%" height="180px">
+            </ion-item>
+
+            <div style="margin-top: 20px">
+              <button type="submit" block ion-button color="primary" class="btn-rounded">Guardar</button>
+            </div>
+      </form>
+      
+
+    </ion-list>
+  </div>
+</ion-content>
