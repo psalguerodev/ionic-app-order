@@ -3,40 +3,59 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
-    <ion-title >{{title}}</ion-title>
+    <ion-title>{{title}}</ion-title>
   </ion-navbar>
 </ion-header>
 
 
-<ion-content padding>
+<ion-content>
   <div class="container">
     <ion-list>
-      <form  name="frmProduct" #frmProduct="ngForm" (ngSubmit)="productHandler()">
-          <ion-item class="rounded">
-              <ion-input type="text" name="name" placeholder="Producto" [(ngModel)]="product.name"></ion-input>
-            </ion-item>
-      
-            <ion-item class="rounded">
-              <ion-input type="text" name="price"  placeholder="Precio" [(ngModel)]="product.price"></ion-input>
-            </ion-item>  
-      
-            <ion-item class="rounded">
-              <ion-input type="text" name="price_u" placeholder="Precio unitario" [(ngModel)]="product.price_u"></ion-input>
-            </ion-item>  
-            
-            <ion-item class="rounded">
-              <ion-input type="text" name="description" placeholder="Descripción" [(ngModel)]="product.description"></ion-input>
-            </ion-item>  
-      
-            <ion-item>
-              <img src="https://goo.gl/ihokqL" alt="" width="100%" height="180px">
-            </ion-item>
+      <form name="frmProduct" #frmProduct="ngForm" (ngSubmit)="productHandler()">
 
-            <div style="margin-top: 20px">
-              <button type="submit" block ion-button color="primary" class="btn-rounded">Guardar</button>
-            </div>
+        <ion-item>
+          <ion-label floating>
+            <ion-icon name="information-circle" item-start class="text-primary"></ion-icon>
+            Nombre
+          </ion-label>
+          <ion-input type="text" name="name" [(ngModel)]="product.name"></ion-input>
+        </ion-item>
+
+        <ion-item>
+          <ion-label floating>
+            <ion-icon name="information-circle" item-start class="text-primary"></ion-icon>
+            Precio
+          </ion-label>
+          <ion-input type="number" name="price" [(ngModel)]="product.price"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label floating>
+            <ion-icon name="information-circle" item-start class="text-primary"></ion-icon>
+            Precio Unidad
+          </ion-label>
+          <ion-input type="number" name="price_u" [(ngModel)]="product.price_u"></ion-input>
+        </ion-item>
+
+
+        <ion-item>
+          <ion-label floating>
+            <ion-icon name="information-circle" item-start class="text-primary"></ion-icon>
+            Descripcion
+          </ion-label>
+          <ion-input type="text" name="description" [(ngModel)]="product.description"></ion-input>
+        </ion-item>
+       
+        <ion-item text-center>
+          <img src="https://goo.gl/ihokqL" alt="" width="80%" height="200px">
+        </ion-item>
+
+        <div style="margin-top: 20px">
+          <button type="submit" block ion-button color="primary" class="btn-rounded">Guardar</button>
+        </div>
       </form>
-      
+
 
     </ion-list>
   </div>
