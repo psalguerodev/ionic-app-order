@@ -10,12 +10,7 @@ export class EnvironmentProvider {
   }
 
   getEndPointApi() : string {
-    let endpoint : string = ""
-    if( config.prd ) {
-        endpoint = config.prd_api
-    }
-    endpoint = config.local_api
-    return endpoint
+    return ( config.prd ) ? config.prd_api : config.local_api
   }
 
 }
