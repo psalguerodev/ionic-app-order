@@ -21,14 +21,14 @@ export class ProductPage {
 
   ionViewDidLoad() {
     console.log('ionViewDidLoad ProductPage');
-    this.producS.getListProducts().subscribe((data:any) => {
+    this.producS.getListProducts(false).subscribe((data:any) => {
       console.log(data)
       this.products = data
     })
   }
 
   ionViewWillEnter() {
-    this.producS.getListProducts().subscribe((data:any) => {
+    this.producS.getListProducts(false).subscribe((data:any) => {
       console.log(data)
       this.products = data
     })
@@ -56,5 +56,9 @@ export class ProductPage {
     this.navCtrl.push( DetailProductPage , { title: 'Actualizar Producto', product : product , new : false  })
   }
 
+
+  loadMore(){
+    console.log( 'Load More' )
+  }
 
 }

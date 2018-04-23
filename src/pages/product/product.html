@@ -15,7 +15,8 @@
 
 <ion-content>
 
-  <ion-searchbar *ngIf="viewsearch" [(ngModel)]="findText" [showCancelButton]="true" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)" placeholder="Buscar Producto"> 
+  <ion-searchbar *ngIf="viewsearch" [(ngModel)]="findText" [showCancelButton]="true" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"
+    placeholder="Buscar Producto">
   </ion-searchbar>
 
   <ion-list *ngIf="products.products">
@@ -27,8 +28,12 @@
 
         <!-- Descripcion -->
         <h2>{{ product.name }}</h2>
-        <p>Precio :  <ion-badge item-end color="secondary">{{ product.price | currency:'S/ '}}</ion-badge></p>
-        <p>Medida: <strong>{{ product.unity }}</strong></p>
+        <p>Precio :
+          <ion-badge item-end color="secondary">{{ product.price | currency:'S/ '}}</ion-badge>
+        </p>
+        <p>Medida:
+          <strong>{{ product.unity }}</strong>
+        </p>
       </ion-item>
       <ion-item-options side="left">
         <button ion-button color="primary">
@@ -45,12 +50,20 @@
         </button>
       </ion-item-options>
     </ion-item-sliding>
+
+    <div text-center style="margin-top: 20px;">
+      <button ion-button color="clean" round type="button" (click)="loadMore()">
+        Cargar Mas
+      </button>
+    </div>
+
   </ion-list>
 
+
   <ion-fab right bottom>
-      <button (click)="createProduct()" ion-fab color="primary">
-        <ion-icon name="add"></ion-icon>
-      </button>
+    <button (click)="createProduct()" ion-fab color="primary">
+      <ion-icon name="add"></ion-icon>
+    </button>
   </ion-fab>
 
 </ion-content>
