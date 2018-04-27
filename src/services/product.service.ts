@@ -8,15 +8,24 @@ import { Observable } from 'rxjs';
 export class ProductService {
 
     public apiurl : string = ""
-    public perpage : number = 10
-    public currentpage:number = 0
+    public since :number = 0
+    
+    //	optional
+    public currentTotal = 0
 
     constructor( private _http: HttpClient, _env: EnvironmentProvider ) {
         this.apiurl = _env.getEndPointApi()
+        console.log('Iniciando el servicio')
     }
 
     getListProducts(infinite:boolean) {
-        let url = (infinite) ? this.apiurl + "/product?since=" + (this.currentpage + this.perpage) : this.apiurl + "/product"
+        let url = ""
+        if( infinite ) {
+            let page =  (this.since == 0 ) ? this.since : this.since
+            url = this.apiurl + "/product?since=" + page
+        }else{
+            url = this.apiurl + "/product?since=0" 
+        }
 
         console.log( url )
 
