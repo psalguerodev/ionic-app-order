@@ -34,6 +34,13 @@ export class ProductService {
         .catch( this.handleError )
     }
 
+    findProductByText(productText:string) {
+        return this._http.get( this.apiurl + '/seeker/collection/products/' + productText.trim())
+        .map((result:any) => result )
+        .catch( this.handleError )
+    }
+
+
     saveProduct( product:any ) {
         return this._http.post( this.apiurl + "/product", product )
         .map( (result:any) => result )

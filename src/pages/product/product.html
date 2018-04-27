@@ -3,6 +3,7 @@
     <button ion-button menuToggle>
       <ion-icon name="menu"></ion-icon>
     </button>
+    
     <ion-title>Productos</ion-title>
 
     <ion-buttons end>
@@ -13,7 +14,7 @@
   </ion-navbar>
 </ion-header>
 
-<ion-content>
+<ion-content id="content-product">
 
   <ion-searchbar *ngIf="viewsearch" [(ngModel)]="findText" [showCancelButton]="true" (ionInput)="onInput($event)" (ionCancel)="onCancel($event)"
     placeholder="Buscar Producto">
@@ -51,7 +52,7 @@
       </ion-item-options>
     </ion-item-sliding>
 
-    <div text-center style="margin-top: 20px;">
+    <div text-center style="margin-top: 20px;" *ngIf="!viewsearch">
       <button ion-button color="clean" round type="button" (click)="loadMore()">
         Cargar Mas
       </button>

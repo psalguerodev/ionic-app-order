@@ -1,8 +1,8 @@
-import { ToastController } from 'ionic-angular';
 import { DetailProductPage } from './../detail-product/detail-product';
 import { ProductService } from './../../services/product.service';
-import { Component } from '@angular/core';
-import { NavController, NavParams } from 'ionic-angular';
+import { Component , ViewChild } from '@angular/core';
+import { NavController, NavParams, Content, ToastController } from 'ionic-angular';
+
 
 @Component({
   selector: 'page-product',
@@ -10,6 +10,7 @@ import { NavController, NavParams } from 'ionic-angular';
 })
 export class ProductPage {
 
+  @ViewChild(Content) content: Content;
   findText:string = ""
   viewsearch:boolean = false
   products:any = []
@@ -35,12 +36,31 @@ export class ProductPage {
       this.products = data
       this.producS.currentTotal = this.products.total
       this.producS.since = 10
+      this.viewsearch=false
     })
   }
 
   onInput( event:any ) {
-    console.log( event )
-    this.viewsearch=true
+    if( this.findText.length > 3 ) {
+      this.producS.findProductByText( this.findText ).subscribe((result:any) => {
+        let products_result : Object[]= result['products']
+        
+        console.log( products_result )
+
+        if( products_result.length > 0 ) {
+          this.products['products'] = []
+          this.products['products'] = products_result
+        }
+
+      })
+      this.viewsearch=true
+    } else {
+        if( this.products['products'].length < 10 ) {
+          this.ionViewWillEnter()
+          this.viewsearch = false
+        }
+    }
+    
   }
 
   onCancel( event:any ) {
@@ -49,6 +69,7 @@ export class ProductPage {
   }
 
   showSearch() {
+    this.content.scrollToTop()
     this.viewsearch = !this.viewsearch
   }
 
@@ -83,3 +104,4 @@ export class ProductPage {
   }
 
 }
+ 
